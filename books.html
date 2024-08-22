@@ -197,8 +197,7 @@
                 </div>
                 <div class="col align-self-center text-center">
                     <div class="logo-small">
-                        <img src="assets/img/logo.png" alt="">
-                        <h5>FiMobile</h5>
+                        <h5 id="covenant">Nuevo Testamento</h5>
                     </div>
                 </div>
                 <div class="col-auto">
@@ -213,39 +212,44 @@
 
         <!-- main page content -->
         <div class="main-container container">
-            <!-- wallet balance -->
-            <div class="card shadow-sm mb-4">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-auto">
-                            <figure class="avatar avatar-44 rounded-10">
-                                <img src="assets/img/user1.jpg" alt="">
-                            </figure>
+
+            <div class="row">
+                <div class="col-12 px-0">
+                    <div class="card mb-4 overflow-hidden shadow-sm theme-bg text-white rounded-0">
+                        <div class="overlay"></div>
+                        <div class="coverimg h-100 w-100 position-absolute opacity-5">
+                            <img src="assets/img/covenant-nt-heading-wallpaper.jpeg" alt="">
                         </div>
-                        <div class="col px-0 align-self-center">
-                            <p class="mb-0 text-color-theme">Maxartkiller</p>
-                            <p class="text-muted size-12">New York City, US</p>
+                        <div class="card-body">
+                            <div class="row mb-5">
+                                <div class="col">
+                                    <!--<a href="#" class="tag text-white">Iniciar lectura</a> -->
+                                </div>
+                                <div class="col-auto">
+                                    <!--<button class="btn btn-danger text-white btn-44 rounded-circle shadow-sm">
+                                        <i class="bi bi-share"></i>
+                                    </button>
+                                    <button class="btn btn-success text-white btn-44 rounded-circle shadow-sm">
+                                        <i class="bi bi-bookmark"></i>
+                                    </button> -->
+                                </div>
+                            </div>
+                            <br>
+                            <span href="blog-details.html" class="h4 text-normal d-block text-white mb-2">Nuevo Testamento</span>
+                            <p class="text-muted">Presentación y Prédica del Evangelio del Reino con Jesús como Rey</p>
+                            <div class="small d-flex">
+                                <figure class="avatar avatar-36 rounded">
+                                    <img src="https://i.pinimg.com/originals/90/44/30/904430f43a30a2d945ae5b18d260b7ab.png" alt="">
+                                </figure>
+                                <p class="mx-2">4 Evangelios de Jesús<br><span class="text-muted">1 libro histórico de la iglesia, <br>21 epístolas y 1 apócalipsis.</span></p>
+                            </div>
                         </div>
-                        <div class="col-auto">
-                            <a href="addmoney.html" class="btn btn-44 btn-light shadow-sm">
-                                <i class="bi bi-plus-circle"></i>
-                            </a>
-                            <a href="withdraw.html" class="btn btn-44 btn-default shadow-sm ms-1">
-                                <i class="bi bi-arrow-down-circle"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card theme-bg text-white border-0 text-center">
-                    <div class="card-body">
-                        <h1 class="display-1 my-2">100.00</h1>
-                        <p class="text-muted mb-2">Wallet Balance in USD</p>
                     </div>
                 </div>
             </div>
 
             <!-- summary -->
-            <div class="row mb-3">
+          <!--  <div class="row mb-3">
                 <div class="col-6 col-md-4">
                     <div class="card shadow-sm mb-2">
                         <div class="card-body">
@@ -280,149 +284,24 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- tabs structure -->
             <ul class="nav nav-pills nav-justified tabs mb-3" id="assetstabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#cards"
-                        type="button" role="tab" aria-controls="cards" aria-selected="true">Cards</button>
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#currency"
+                        type="button" role="tab" aria-controls="currency" aria-selected="true">Información</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="currency-tab" data-bs-toggle="tab" data-bs-target="#currency"
-                        type="button" role="tab" aria-controls="currency" aria-selected="false">Currency</button>
+                    <button class="nav-link " id="currency-tab" data-bs-toggle="tab" data-bs-target="#libros"
+                        type="button" role="tab" aria-controls="libros" aria-selected="false">Libros</button>
                 </li>
             </ul>
             <div class="tab-content" id="assetstabsContent">
-                <div class="tab-pane fade show active" id="cards" role="tabpanel" >
-                    <!-- swiper credit cards -->
-                    <div class="row mb-3">
-                        <div class="col-12 px-0">
-                            <div class="swiper-container cardswiper">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="card dark-bg">
-                                            <div class="card-body">
-                                                <div class="row mb-3">
-                                                    <div class="col-auto align-self-center">
-                                                        <img src="assets/img/masterocard.png" alt="">
-                                                    </div>
-                                                    <div class="col align-self-center text-end">
-                                                        <p class="small">
-                                                            <span class="text-uppercase size-10">Validity</span><br>
-                                                            <span class="text-muted">06/25</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <h4 class="fw-normal mb-2">
-                                                            56040.00
-                                                            <span class="small text-muted">USD</span>
-                                                        </h4>
-                                                        <p class="mb-0 text-muted size-12">10141 0021 0001 0154</p>
-                                                        <p class="text-muted size-12">Debit Card</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card theme-radial-gradient border-0">
-                                            <div class="card-body">
-                                                <div class="row mb-3">
-                                                    <div class="col-auto align-self-center">
-                                                        <i class="bi bi-wallet2"></i> Wallet
-                                                    </div>
-                                                    <div class="col align-self-center text-end">
-                                                        <p class="small">
-                                                            <span class="text-uppercase size-10">Validity</span><br>
-                                                            <span class="text-muted">Unlimited</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <h4 class="fw-normal mb-2">
-                                                            100.00
-                                                            <span class="small text-muted">USD</span>
-                                                        </h4>
-                                                        <p class="mb-0 text-muted size-12">10141 0021 0001 0154</p>
-                                                        <p class="text-muted size-12">Debit Card</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="row mb-3">
-                                                    <div class="col-auto align-self-center">
-                                                        <img src="assets/img/masterocard.png" alt="">
-                                                    </div>
-                                                    <div class="col align-self-center text-end">
-                                                        <p class="small">
-                                                            <span class="text-uppercase size-10">Validity</span><br>
-                                                            <span class="text-muted">09/24</span>
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <h4 class="fw-normal mb-2">
-                                                            150540.00
-                                                            <span class="small text-muted">USD</span>
-                                                        </h4>
-                                                        <p class="mb-0 text-muted size-12">10141 0021 0001 0154</p>
-                                                        <p class="text-muted size-12">Debit Card</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Transactions -->
-                    <div class="row mb-3">
-                        <div class="col">
-                            <h6 class="title">Transactions</h6>
-                        </div>                        
-                        <div class="col-auto">
-                            <a href="" class="small">Add Card</a>
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col-12 px-0">
-                            <ul id="bookULList" class="list-group list-group-flush bg-none">
-                                
-                                <!--<li class="list-group-item">
-                                    <div class="row">
-                                        <div class="col-auto">
-                                            <div class="avatar avatar-50 shadow rounded-10 ">
-                                                <img src="assets/img/company4.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col align-self-center ps-0">
-                                            <p class="text-color-theme mb-0">Zomato</p>
-                                            <p class="text-muted size-12">Food</p>
-                                        </div>
-                                        <div class="col align-self-center text-end">
-                                            <p class="mb-0">-25.00</p>
-                                            <p class="text-muted size-12">Debit Card 4545</p>
-                                        </div>
-                                    </div>
-                                </li> -->
 
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="tab-pane fade" id="currency" role="tabpanel" aria-labelledby="currency-tab">
+                <!-- INFORMACION -->
+                <div class="tab-pane fade show active" id="currency" role="tabpanel" aria-labelledby="currency-tab">
                     <div class="row">
                         <div class="col-12 col-md-6 align-self-center">
                             <div class="chartdoughnut mb-4">
@@ -522,6 +401,56 @@
                         </div>
                     </div>
                 </div>
+
+
+
+                <div class="tab-pane fade show " id="libros" role="tabpanel" >
+                    <!-- swiper credit cards -->
+                    
+
+                    <!-- Transactions -->
+                    <div class="row mb-3">
+                        <div class="col">
+                            <h6 class="title">Libros</h6>
+                        </div>                        
+                        <div class="col-auto">
+                            <a href="" class="small">Leer</a>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-12 px-0">
+                            <ul id="bookULList" class="list-group list-group-flush bg-none">
+                                
+                                <!--<li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div class="avatar avatar-50 shadow rounded-10 ">
+                                                <img src="assets/img/company4.jpg" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col align-self-center ps-0">
+                                            <p class="text-color-theme mb-0">Zomato</p>
+                                            <p class="text-muted size-12">Food</p>
+                                        </div>
+                                        <div class="col align-self-center text-end">
+                                            <p class="mb-0">-25.00</p>
+                                            <p class="text-muted size-12">Debit Card 4545</p>
+                                        </div>
+                                    </div>
+                                </li> -->
+                                <div id="cargando-libros" style="align-self: center; align-items: center;">
+                                    <p style="text-align: center;">Cargando libros...</p>
+                                    <p style="text-align: center;">Espera un momento por favor...</p>
+                                </div>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                
             </div>
 
         </div>

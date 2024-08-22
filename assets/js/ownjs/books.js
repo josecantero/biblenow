@@ -14,6 +14,8 @@ function bookList(booksJSON){
     
     bookULList = document.getElementById("bookULList");
     console.log(booksJSON["data"]);
+    cargandoLIbros = document.getElementById("cargando-libros");
+    cargandoLIbros.remove();
     booksJSON["data"].forEach(book => {
         //console.log(book["chapters"]);
         lista = document.createElement("li"); lista.setAttribute("class","list-group-item");
@@ -42,7 +44,8 @@ function bookList(booksJSON){
         linkButton.appendChild(iButton);
         divButton.appendChild(linkButton);
         divRow.appendChild(divButton);
-
+        
+        
         lista.appendChild(divRow)
         bookULList.appendChild(lista);
     })
