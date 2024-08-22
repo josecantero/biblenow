@@ -45,34 +45,5 @@ function bookList(booksJSON){
 
         lista.appendChild(divRow)
         bookULList.appendChild(lista);
-
-
     })
-
-    
-
-    
-    
-    console.log(divRow); 
-    
 }
-
-/*
-<li class="list-group-item">
-    <div class="row">
-        <div class="col-auto">
-            <div class="avatar avatar-50 shadow rounded-10 ">
-                <img src="assets/img/company4.jpg" alt="">
-            </div>
-        </div>
-        <div class="col align-self-center ps-0">
-            <p class="text-color-theme mb-0">Zomato</p>
-            <p class="text-muted size-12">Food</p>
-        </div>
-        <div class="col align-self-center text-end">
-            <p class="mb-0">-25.00</p>
-            <p class="text-muted size-12">Debit Card 4545</p>
-        </div>
-    </div>
-</li>
-*/
