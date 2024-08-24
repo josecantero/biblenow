@@ -1,5 +1,7 @@
 book = [];
-fetch('https://script.google.com/macros/s/AKfycbwYl7-WAK0RCBkA-0b8mMyvga6Y5B7M-AKpSH0qVjJT7h_GA4bJFzmgAuQir3HoMtM1/exec?id=0&covenant=0', {
+bookID = 1
+apiURL = "https://script.google.com/macros/s/AKfycbwYl7-WAK0RCBkA-0b8mMyvga6Y5B7M-AKpSH0qVjJT7h_GA4bJFzmgAuQir3HoMtM1/exec?id=0&covenant="+bookID;
+fetch(apiURL, {
     method: 'GET',
     headers: {
         'Accept': 'application/json',
@@ -13,7 +15,7 @@ fetch('https://script.google.com/macros/s/AKfycbwYl7-WAK0RCBkA-0b8mMyvga6Y5B7M-A
 function bookList(booksJSON){
     
     bookULList = document.getElementById("bookULList");
-    console.log(booksJSON["data"]);
+    //console.log(booksJSON["data"]);
     cargandoLIbros = document.getElementById("cargando-libros");
     cargandoLIbros.remove();
     booksJSON["data"].forEach(book => {
@@ -39,7 +41,7 @@ function bookList(booksJSON){
 
         //link to book
         divButton = document.createElement("div"); divButton.setAttribute("class","col-auto");
-        linkButton = document.createElement("a"); linkButton.setAttribute("href","LINK A BOOK CON ID BOOK"); linkButton.setAttribute("class", "btn btn-default btn-44 shadow-sm");
+        linkButton = document.createElement("a"); linkButton.setAttribute("href","#"); linkButton.setAttribute("class", "btn btn-default btn-44 shadow-sm");
         iButton = document.createElement("i"); iButton.setAttribute("class","bi bi-arrow-up-right-circle");
         linkButton.appendChild(iButton);
         divButton.appendChild(linkButton);
