@@ -371,6 +371,10 @@ Table of content
   }
 }
 
+body, html{
+  zoom: 100%;
+}
+
 body {
   margin: 0;
   font-family: var(--bs-font-sans-serif);
