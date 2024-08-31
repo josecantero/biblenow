@@ -1,16 +1,20 @@
 let params = new URLSearchParams(location.search);
 //var contract = params.get('contrato');
 var book = [];
-var bookID = params.get('covenant');
-
+var covenantID = params.get('covenant');
+var bookID = params.get('id');
+var chapterID = params.get('chapter');
 let covenantURL = "books.html?covenant=";
 
 
-var apiURL = "https://script.google.com/macros/s/AKfycbwYl7-WAK0RCBkA-0b8mMyvga6Y5B7M-AKpSH0qVjJT7h_GA4bJFzmgAuQir3HoMtM1/exec?id=0&covenant=";
+var apiURL = "https://script.google.com/macros/s/AKfycbz4IXi3Od3EqFShAYPiSY59Sxv6OTHQW6L1KxSir3uk-8fDqw02OGqeP2u-pXGZjILE/exec?";
 
-let apiURLID = apiURL+bookID;
 
-setTitle(bookID);
+let apiURLID = apiURL + "id=" + bookID + "&" + "covenant=" + covenantID + "&" + "chapter=" + chapterID;
+
+
+
+setTitle(covenantID);
 
 fetch(apiURLID, {
     method: 'GET',
@@ -64,23 +68,23 @@ function bookList(booksJSON){
     })
 }
 
-function setTitle(bookID){
+function setTitle(covenantID){
     var title = document.getElementById('covenantTitle');
     var arrow = document.getElementById("arrow");
     var covenant = document.getElementById("covenant");
     
 
-    if(bookID == 0){
+    if(covenantID == 0){
         title.innerHTML = "Antiguo Testamento";
         arrow.classList.remove("fa-chevron-left");
         arrow.classList.add("fa-chevron-right");
-        covenant.setAttribute("href",covenantURL+"1");
+        covenant.setAttribute("href",covenantURL+"1"+"&id=0&chapter=0");
     }
     else
     {
         title.innerHTML = "Nuevo Testamento";
         arrow.classList.remove("fa-chevron-right");
         arrow.classList.add("fa-chevron-left");
-        covenant.setAttribute("href",covenantURL+"0");
+        covenant.setAttribute("href",covenantURL+"0"+"&id=0&chapter=0");
     }
 }
