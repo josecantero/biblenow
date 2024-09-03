@@ -7,34 +7,43 @@ var chapterID = params.get('chapter');
 let covenantURL = "books.html?covenant=";
 
 
-var apiURL = "https://script.google.com/macros/s/AKfycbz4IXi3Od3EqFShAYPiSY59Sxv6OTHQW6L1KxSir3uk-8fDqw02OGqeP2u-pXGZjILE/exec?";
+var apiURL = "https://script.google.com/macros/s/AKfycbxhdZ_-KCVEYizm6-lK10RjZKSU4WJaaOwZ6e_YR5Qu2rGGgWy3M-t7FGSnlQSU3DLs/exec?";
 
 
 let apiURLID = apiURL + "id=" + bookID + "&" + "covenant=" + covenantID + "&" + "chapter=" + chapterID;
 
 
 
-setTitle(covenantID);
-
-fetch(apiURLID, {
-    method: 'GET',
-    headers: {
-        'Accept': 'application/json',
-    },
-})
-   .then(response => response.json())
-   .then(response => bookList(response));
-
+if(parseInt(bookID) >= 1){
+    fetch(apiURLID, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(response => bookVerse(response));
+}else{
+    fetch(apiURLID, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(response => bookList(response));
+}
 
 
 function bookList(booksJSON){
+    setTitle(covenantID);
     
     bookULList = document.getElementById("bookULList");
-    //console.log(booksJSON["data"]);
+    
     cargandoLIbros = document.getElementById("cargando-libros");
     cargandoLIbros.remove();
+    
     booksJSON["data"].forEach(book => {
-        //console.log(book["chapters"]);
         lista = document.createElement("li"); lista.setAttribute("class","list-group-item");
         divRow = document.createElement("div"); divRow.setAttribute("class","row");
     
@@ -56,7 +65,7 @@ function bookList(booksJSON){
 
         //link to book
         divButton = document.createElement("div"); divButton.setAttribute("class","col-auto");
-        linkButton = document.createElement("a"); linkButton.setAttribute("href","#"); linkButton.setAttribute("class", "btn btn-default btn-44 shadow-sm");
+        linkButton = document.createElement("a"); linkButton.setAttribute("href","book.html?id="+book['id']+"&chapter="+1); linkButton.setAttribute("class", "btn btn-default btn-44 shadow-sm");
         iButton = document.createElement("i"); iButton.setAttribute("class","bi bi-arrow-up-right-circle");
         linkButton.appendChild(iButton);
         divButton.appendChild(linkButton);
@@ -66,6 +75,54 @@ function bookList(booksJSON){
         lista.appendChild(divRow)
         bookULList.appendChild(lista);
     })
+}
+
+function bookVerse(bookVersesJSON){
+    versesListUL = document.getElementById("verseList");
+    bookName = ""
+    id = 0;
+    bookVersesJSON["data"].forEach(verse =>{
+        if(id == 0)
+        {
+            id = id + 1;
+            bookName = verse["modern_name"];
+        }
+        else{
+            if(id == 1){
+                bookNameH6 = document.getElementById("BookName"); bookNameH6.innerHTML = "Capítulo " + verse["chapter"];
+                bookTitleH5 = document.getElementById("BookTitle"); bookTitleH5.innerHTML = bookName;
+                id = id + 1;    
+            }
+            verseLI = document.createElement("li"); verseLI.setAttribute("class","list-group-item");
+            divAvatar = document.createElement("div"); divAvatar.setAttribute("class","avatar avatar-15 border-success rounded-circle");
+        
+            verseParagraph = document.createElement("p");
+            verseNumSpan = document.createElement("span"); verseNumSpan.setAttribute("class","verseNum text-color-theme"); verseNumSpan.innerHTML = verse["verse"]+" ";
+            verseTextSmall = document.createElement("smaall"); verseTextSmall.setAttribute("class","Verse text-muted"); verseTextSmall.innerHTML= verse["text"];
+
+            verseParagraph.appendChild(verseNumSpan); verseParagraph.appendChild(verseTextSmall);
+            
+            verseLI.appendChild(divAvatar); verseLI.appendChild(verseParagraph);
+            
+            versesListUL.appendChild(verseLI);
+        }
+        
+    });
+
+    
+
+    
+
+    
+
+    /*
+    <li class="list-group-item">
+                                    <div class="avatar avatar-15 border-warning rounded-circle"></div>
+                                    <p><span class="verseNum text-color-theme">1.</span>
+                                        <small class="Verse text-muted">En el principio creó Dios los cielos y la tierra.</small></p>
+                                </li>
+    */
+
 }
 
 function setTitle(covenantID){
