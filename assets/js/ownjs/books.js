@@ -92,7 +92,7 @@ function bookVerse(bookVersesJSON){
             for(chapt = 1; chapt <= bChapters; chapt++){
                 console.log("capítulo "+chapt);
                 liChapter = document.createElement("li"); liChapter.setAttribute("style","padding:10px; display: flex; text: center;")
-                ahrefNextChapter = document.createElement("a"); ahrefNextChapter.setAttribute("href","#"); ahrefNextChapter.innerHTML = "Capítulo " + chapt;
+                ahrefNextChapter = document.createElement("a"); ahrefNextChapter.setAttribute("href","book.html?id="+verse['id']+"&chapter="+chapt); ahrefNextChapter.innerHTML = "Capítulo " + chapt;
                 liChapter.appendChild(ahrefNextChapter);
                 chaptersUl.appendChild(liChapter);
             }
