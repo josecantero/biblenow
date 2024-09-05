@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>FiMobile V2.0 - Mobile HTML template</title>
+    <title>Book</title>
 
     <!-- manifest meta -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -25,6 +25,7 @@
 
     <!-- bootstrap icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/fa/css/all.css" />
 
     <!-- style css for this template -->
     <link href="assets/css/style.css" rel="stylesheet" id="style">
@@ -59,11 +60,13 @@
                 <div class="col align-self-center text-center">
                     <h5 id="BookTitle""></h5>
                 </div>
-                <div class="col-auto">
-                    <a href="notifications.html" target="_self" class="btn btn-light btn-44">
-                        <i class="bi bi-bell"></i>
-                        <span class="count-indicator"></span>
-                    </a>
+                <div class="col-auto text-center mb-4">
+                    <div class="text-center">
+                        <button class="btn btn-light btn-44 mb-3 px-4 shadow-sm" data-bs-target="#cammodal"
+                        data-bs-toggle="modal">
+                            <i class="fa-duotone fa-solid fa-chevron-down"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>
@@ -81,7 +84,6 @@
                         </div>
                         <div class="card-body bg-light">
                             <ul id="verseList" class="list-group list-group-flush w-100 bubble-sheet log-information">
-                                
                                 
                             </ul>
                         </div>
@@ -106,9 +108,27 @@
         </div>
         <!-- main page content ends -->
 
+        
     </main>
     <!-- Page ends-->
-
+    <!-- Book Chapters List -->
+    <div class="modal fade" id="cammodal" tabindex="-1" aria-labelledby="cammodalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xsm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="cammodalLabel">Capítulos</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <ul id="chapters" class="border-0" style="display: inline-block; padding-left: 0rem;" aria-labelledby="ln1">
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Book Chapters ends-->
 
     <!-- Required jquery and libraries -->
     <script src="assets/js/jquery-3.3.1.min.js"></script>

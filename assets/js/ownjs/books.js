@@ -78,6 +78,7 @@ function bookList(booksJSON){
 }
 
 function bookVerse(bookVersesJSON){
+    console.log(bookVersesJSON);
     versesListUL = document.getElementById("verseList");
     bookName = ""
     id = 0;
@@ -86,6 +87,15 @@ function bookVerse(bookVersesJSON){
         {
             id = id + 1;
             bookName = verse["modern_name"];
+            chaptersUl = document.getElementById("chapters");
+            bChapters = verse["chapters"];
+            for(chapt = 1; chapt <= bChapters; chapt++){
+                console.log("capítulo "+chapt);
+                liChapter = document.createElement("li"); liChapter.setAttribute("style","padding:10px; display: flex; text: center;")
+                ahrefNextChapter = document.createElement("a"); ahrefNextChapter.setAttribute("href","#"); ahrefNextChapter.innerHTML = "Capítulo " + chapt;
+                liChapter.appendChild(ahrefNextChapter);
+                chaptersUl.appendChild(liChapter);
+            }
         }
         else{
             if(id == 1){
@@ -108,21 +118,6 @@ function bookVerse(bookVersesJSON){
         }
         
     });
-
-    
-
-    
-
-    
-
-    /*
-    <li class="list-group-item">
-                                    <div class="avatar avatar-15 border-warning rounded-circle"></div>
-                                    <p><span class="verseNum text-color-theme">1.</span>
-                                        <small class="Verse text-muted">En el principio creó Dios los cielos y la tierra.</small></p>
-                                </li>
-    */
-
 }
 
 function setTitle(covenantID){
