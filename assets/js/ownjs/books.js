@@ -65,7 +65,7 @@ function bookList(booksJSON){
 
         //link to book
         divButton = document.createElement("div"); divButton.setAttribute("class","col-auto");
-        linkButton = document.createElement("a"); linkButton.setAttribute("href","book.html?id="+book['id']+"&chapter="+1); linkButton.setAttribute("class", "btn btn-default btn-44 shadow-sm");
+        linkButton = document.createElement("a"); linkButton.setAttribute("href","book.html?id="+book['id']+"&chapter="+1+"&covenant="+covenantID); linkButton.setAttribute("class", "btn btn-default btn-44 shadow-sm");
         iButton = document.createElement("i"); iButton.setAttribute("class","bi bi-arrow-up-right-circle");
         linkButton.appendChild(iButton);
         divButton.appendChild(linkButton);
@@ -78,7 +78,6 @@ function bookList(booksJSON){
 }
 
 function bookVerse(bookVersesJSON){
-    console.log(bookVersesJSON);
     versesListUL = document.getElementById("verseList");
     bookName = ""
     id = 0;
@@ -89,10 +88,10 @@ function bookVerse(bookVersesJSON){
             bookName = verse["modern_name"];
             chaptersUl = document.getElementById("chapters");
             bChapters = verse["chapters"];
+            returnCoventant = document.getElementById("returnCovenant"); returnCoventant.setAttribute("onclick","window.location.replace('books.html?covenant="+covenantID+"&id=0&chapter=0');");
             for(chapt = 1; chapt <= bChapters; chapt++){
-                console.log("capítulo "+chapt);
                 liChapter = document.createElement("li"); liChapter.setAttribute("style","padding:10px; display: flex; text: center;")
-                ahrefNextChapter = document.createElement("a"); ahrefNextChapter.setAttribute("href","book.html?id="+verse['id']+"&chapter="+chapt); ahrefNextChapter.innerHTML = "Capítulo " + chapt;
+                ahrefNextChapter = document.createElement("a"); ahrefNextChapter.setAttribute("href","book.html?id="+verse['id']+"&chapter="+chapt+"&covenant="+covenantID); ahrefNextChapter.innerHTML = "Capítulo " + chapt;
                 liChapter.appendChild(ahrefNextChapter);
                 chaptersUl.appendChild(liChapter);
             }
